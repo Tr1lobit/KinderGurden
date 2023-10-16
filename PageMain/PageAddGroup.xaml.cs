@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using AfonichevKinderGarden.Model;
 
 namespace AfonichevKinderGarden.PageMain
 {
@@ -23,6 +24,39 @@ namespace AfonichevKinderGarden.PageMain
         public PageAddGroup()
         {
             InitializeComponent();
+            GroupTypeCmb.ItemsSource = App.GetContext().VidGroup.ToList();
+        }
+
+        private void AddBtn_Click(object sender, RoutedEventArgs e)
+        {
+            string addCheck = "";
+
+            if (string.IsNullOrWhiteSpace(GroupTb.Text))
+            {
+                addCheck += "Введите имя группы\n";
+            }
+            if (string.IsNullOrWhiteSpace(GroupTypeCmb.Text))
+            {
+                addCheck += "Выберите тип группы\n";
+            }
+
+            if (addCheck != "")
+            {
+                MessageBox.Show(addCheck);
+                addCheck = "";
+                return;
+            }
+
+            GroupDS groupDS = new GroupDS()
+            {
+                Name = GroupTb.Text,
+                VidGroup = GroupTypeCmb.SelectedItem as VidGroup
+            };
+
+            App.GetContext().GroupDS.Add(groupDS);
+            App.GetContext().SaveChanges();
+            MessageBox.Show("Группа добавлена!");
+
         }
     }
 }

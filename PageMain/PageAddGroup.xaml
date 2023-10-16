@@ -27,10 +27,13 @@
                    FontSize="20"/>
         <TextBox Grid.Row="1"
                  Width="400"
-                 Name="GroupTb"/>
+                 Name="GroupTb"
+                 FontSize="20"/>
         <ComboBox Grid.Row="3"
                   Width="400"
-                  Name="GroupTypeTb"/>
+                  Name="GroupTypeCmb"
+                  DisplayMemberPath="Name"
+                  FontSize="20"/>
         <Grid Grid.Row="4">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*"/>
@@ -40,7 +43,9 @@
                     FontSize="25"
                     Height="40"
                     Width="270"
-                    Name="AddBtn"/>
+                    Name="AddBtn"
+                    Click="AddBtn_Click"/>
+            
             <Button Grid.Column="1"
                     Content="Назад"
                     FontSize="25"
