@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using AfonichevKinderGarden.Model;
 
 namespace AfonichevKinderGarden.PageMain
 {
@@ -23,6 +24,45 @@ namespace AfonichevKinderGarden.PageMain
         public PageAddActivity()
         {
             InitializeComponent();
+            ActivityTypeCmb.ItemsSource = App.GetContext().Direction.ToList();
+        }
+
+        private void AddBtn_Click(object sender, RoutedEventArgs e)
+        {
+            string addCheck = "";
+
+            if (string.IsNullOrWhiteSpace(ActivityTb.Text))
+            {
+                addCheck += "Введите название мероприятия\n";
+            }
+            if (string.IsNullOrWhiteSpace(ActivityTypeCmb.Text))
+            {
+                addCheck += "Выберите тип мероприятия\n";
+            }
+
+            if (addCheck != "")
+            {
+                MessageBox.Show(addCheck);
+                addCheck = "";
+                return;
+            }
+
+            Activity activity = new Activity()
+            {
+                Name = ActivityTb.Text,
+                Direction = ActivityTypeCmb.SelectedItem as Direction
+            };
+
+            App.GetContext().Activity.Add(activity);
+            App.GetContext().SaveChanges();
+            MessageBox.Show("Мероприятие добавлено!");
+
+            NavigationService.Navigate(new PageBody());
+        }
+
+        private void BackBtn_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new PageBody());
         }
     }
 }

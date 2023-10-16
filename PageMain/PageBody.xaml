@@ -24,7 +24,8 @@
                 Width="200"
                 Height="50"
                 Content="Добавить мероприятие"
-                Name="AddActivityBtn"/>
+                Name="AddActivityBtn"
+                Click="AddActivityBtn_Click"/>
         <Button Grid.Row="2"
                 Width="200"
                 Height="50"

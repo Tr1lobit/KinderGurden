@@ -57,6 +57,12 @@ namespace AfonichevKinderGarden.PageMain
             App.GetContext().SaveChanges();
             MessageBox.Show("Группа добавлена!");
 
+            NavigationService.Navigate(new PageBody());
+        }
+
+        private void BackBtn_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new PageBody());
         }
     }
 }

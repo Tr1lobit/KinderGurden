@@ -29,5 +29,10 @@ namespace AfonichevKinderGarden.PageMain
         {
             NavigationService.Navigate(new PageAddGroup());
         }
+
+        private void AddActivityBtn_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new PageAddActivity());
+        }
     }
 }

@@ -9,6 +9,50 @@
       Title="PageAddActivity">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="90" />
+        </Grid.RowDefinitions>
+        <TextBlock Width="400"
+                   Text="Введите мероприятие:"
+                   VerticalAlignment="Center"
+                   FontSize="20"/>
+        <TextBlock Grid.Row="2"
+                   Width="400"
+                   Text="Выберите вид мероприятия:"
+                   VerticalAlignment="Center"
+                   FontSize="20"/>
+        <TextBox Grid.Row="1"
+                 Width="400"
+                 Name="ActivityTb"
+                 FontSize="20"/>
+        <ComboBox Grid.Row="3"
+                  Width="400"
+                  Name="ActivityTypeCmb"
+                  DisplayMemberPath="Name"
+                  FontSize="20"/>
+        <Grid Grid.Row="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Button Content="Добавить"
+                    FontSize="25"
+                    Height="40"
+                    Width="270"
+                    Name="AddBtn"
+                    Click="AddBtn_Click"/>
+
+            <Button Grid.Column="1"
+                    Content="Назад"
+                    FontSize="25"
+                    Height="40"
+                    Width="270"
+                    Name="BackBtn"
+                    Click="BackBtn_Click"/>
+        </Grid>
     </Grid>
 </Page>

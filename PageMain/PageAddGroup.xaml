@@ -51,7 +51,8 @@
                     FontSize="25"
                     Height="40"
                     Width="270"
-                    Name="BackBtn"/>
+                    Name="BackBtn"
+                    Click="BackBtn_Click"/>
         </Grid>
     </Grid>
 </Page>
