@@ -34,5 +34,10 @@ namespace AfonichevKinderGarden.PageMain
         {
             NavigationService.Navigate(new PageAddActivity());
         }
+
+        private void Journal_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new PageJournal());
+        }
     }
 }

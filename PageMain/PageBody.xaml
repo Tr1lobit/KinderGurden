@@ -35,6 +35,7 @@
                 Width="200"
                 Height="50"
                 Content="Журнал"
-                Name="Journal"/>
+                Name="Journal"
+                Click="Journal_Click"/>
     </Grid>
 </Page>
