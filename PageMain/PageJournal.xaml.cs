@@ -70,6 +70,23 @@ namespace AfonichevKinderGarden.PageMain
 
             if (mes != "")
                 MessageBox.Show(mes);
+
+            if (mes == "")
+            {
+                Journal journal = new Journal()
+                {
+                    DateZan = (DateTime)DateDP.SelectedDate,
+                    GroupDS = GroupCmb.SelectedItem as GroupDS,
+                    Activity = ActivityCmb.SelectedItem as Activity,
+                    Mark = GradeCmb.SelectedItem as Mark
+                };
+
+                App.GetContext().Journal.Add(journal);
+                App.GetContext().SaveChanges();
+                MessageBox.Show("Оценка проставлена!");
+                NavigationService.Navigate(new PageBody());
+            }
+
         }
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
