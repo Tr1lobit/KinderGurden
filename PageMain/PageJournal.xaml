@@ -49,10 +49,10 @@
             <TextBlock Text="Выберите вид группы"
                        FontSize="18"/>
             <ComboBox Name="GroupTypeCmb"
-                      DisplayMemberPath="Name"
                       Width="260"
                       Height="25"
-                      HorizontalAlignment="Left"/>
+                      HorizontalAlignment="Left"
+                      SelectionChanged="GroupTypeCmb_SelectionChanged"/>
         </StackPanel>
 
         <StackPanel Grid.Row="1"
@@ -61,10 +61,10 @@
             <TextBlock Text="Выберите вид мероприятия"
                        FontSize="18"/>
             <ComboBox Name="ActivityTypeCmb"
-                      DisplayMemberPath="Name"
                       Width="260"
                       Height="25"
-                      HorizontalAlignment="Left"/>
+                      HorizontalAlignment="Left"
+                      SelectionChanged="ActivityTypeCmb_SelectionChanged"/>
         </StackPanel>
 
         <StackPanel Grid.Row="2"
@@ -72,7 +72,6 @@
             <TextBlock Text="Выберите группу"
                        FontSize="18"/>
             <ComboBox Name="GroupCmb"
-                      DisplayMemberPath="Name"
                       Width="260"
                       Height="25"
                       HorizontalAlignment="Left"/>
@@ -84,7 +83,6 @@
             <TextBlock Text="Выберите мероприятие"
                        FontSize="18"/>
             <ComboBox Name="ActivityCmb"
-                      DisplayMemberPath="Name"
                       Width="260"
                       Height="25"
                       HorizontalAlignment="Left"/>
@@ -97,7 +95,6 @@
                    HorizontalAlignment="Center"/>
 
         <ComboBox Name="GradeCmb"
-                  DisplayMemberPath="Name"
                   Grid.Row="3"
                   Grid.Column="1"
                   Width="260"
