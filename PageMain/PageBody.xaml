@@ -30,7 +30,8 @@
                 Width="200"
                 Height="50"
                 Content="Учет"
-                Name="AccountgBtn"/>
+                Name="AccountgBtn"
+                Click="AccountgBtn_Click"/>
         <Button Grid.Row="3"
                 Width="200"
                 Height="50"

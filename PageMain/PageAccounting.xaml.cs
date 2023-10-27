@@ -23,6 +23,23 @@ namespace AfonichevKinderGarden.PageMain
         public PageAccounting()
         {
             InitializeComponent();
+            GroupCmb.SelectedValuePath = "Id";
+            GroupCmb.DisplayMemberPath = "Name";
+            GroupCmb.ItemsSource = App.GetContext().GroupDS.ToList();
+
+            GroupDG.SelectedValuePath = "Id";
+            GroupDG.ItemsSource = App.GetContext().Journal.ToList();
+        }
+
+        private void BackBtn_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new PageBody());
+        }
+
+        private void GroupCmb_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            int selectedGroup = Convert.ToInt32(GroupCmb.SelectedValue);
+            GroupDG.ItemsSource = App.GetContext().Journal.Where(j => j.IdGroupDS == selectedGroup).ToList();
         }
     }
 }
